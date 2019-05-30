@@ -1,0 +1,109 @@
+<html>
+	<head>
+		<title>Highcharts Tutorial</title>
+		<script src ="https://code.highcharts.com/highcharts.js"></script> 
+	</head>
+	<body>
+		<div id = "container" style = "margin: 0 auto"></div>
+		<script language = "JavaScript">
+
+			document.addEventListener('DOMContentLoaded', function () {
+
+				Highcharts.chart('container', {
+					chart: {
+						zoomType : false,
+						animation: false,
+						width: 450,
+						height: 230,
+						spacingBottom: 5,
+						spacingTop: 5,
+						spacingLeft: 2,
+						spacingRight: 2,
+					},
+
+    yAxis: [{ // Primary yAxis
+        labels: {
+            format: '{value}',
+            style: {
+                color: Highcharts.getOptions().colors[0]
+            }
+        },
+        title: {
+            text: null,
+            style: {
+                color: Highcharts.getOptions().colors[0]
+            }
+        },
+        opposite: true
+
+    }, { // Secondary yAxis
+        gridLineWidth: 0,
+        title: {
+            text: null,
+            style: {
+                color: Highcharts.getOptions().colors[1]
+            }
+        },
+        labels: {
+            format: '{value}',
+            style: {
+                color: Highcharts.getOptions().colors[1]
+            }
+        }
+
+    }, { // Tertiary yAxis
+        gridLineWidth: 0,
+        title: {
+            text: null,
+        },
+        labels: {
+	    enabled:false,
+            format: '{value}',
+            style: {
+                color: Highcharts.getOptions().colors[1]
+            }
+        },
+        opposite: true
+    }],
+					legend: {
+						align: 'left',
+						verticalAlign: 'top',
+					},
+					plotOptions: {
+						series: {
+							pointPlacement: 0.1,
+							groupPadding: 0.2,
+							pointPadding: -0.2,
+						},
+						column: {
+							borderWidth: 0,
+							shadow: false
+						},
+						columns: {
+							enableMouseTracking: false
+						}
+					},
+					title: {
+						text: null
+					},
+					xAxis: {
+						labels: { enabled: false},
+						categories: ["2017.2Q","2017.3Q","2017.4Q","2018.1Q","2018.2Q","2018.3Q","2018.4Q","2019.1Q"]
+					},
+					credits: {
+						enabled: false
+					},
+					series: [{"name":"自由現金",yAxis:0, type:"column", "data":[-1788.0,55069.0,142946.0,88879.0,70092.0,24133.0,75268.0,76728.0]},
+						     {"name":"營業活動現金",yAxis:0, type:"column", "data":[103400.0,116783.0,204126.0,160726.0,129773.0,94082.0,189373.0,152670.0]},
+						     {"name":"abc",type:"spline", yAxis:1, "data":[22,33,42,12,34,22,33,22]}
+					
+					
+					]       
+			   	});
+
+			});
+
+		</script>
+	</body>
+
+</html>

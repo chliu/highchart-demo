@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<script src ="https://code.highcharts.com/highcharts.js"></script>
+	</head>
+	<body>
+		<div id = "container" style = "margin: 0 auto"></div>
+		<script language = "JavaScript">
+			document.addEventListener('DOMContentLoaded', function () {
+				Highcharts.chart('container', {
+					chart: {
+						type: 'column'
+					},
+					title: {
+						text: null
+					},
+					xAxis: {
+						categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+					},
+					legend: {
+						align: 'left',
+						verticalAlign: 'top',
+					},
+					yAxis: {
+						title: {
+							text: null
+						},
+						stackLabels: {
+							enabled: true,
+							style: {
+								fontWeight: 'bold',
+								color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+							}
+						}
+					},
+					credits: {
+						enabled: false
+					},
+					plotOptions: {
+						series: {
+							stacking: 'normal'
+						}
+					},
+					series: [{
+						name: 'John',
+						data: [5, 3, 0, 7, 2]
+					}, {
+						name: 'Jane',
+						data: [2, -2, -3, 0, -11]
+					}]
+				});
+			});
+		</script>
+	</body>
+</html>
+

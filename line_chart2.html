@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<title>Highcharts Tutorial</title>
+		<script src ="https://code.highcharts.com/highcharts.js"></script> 
+	</head>
+	<body>
+		<div id = "container" style = "margin: 0 auto"></div>
+		<script language = "JavaScript">
+
+			document.addEventListener('DOMContentLoaded', function () {
+
+				Highcharts.chart('container', {
+					chart: {
+						width: 450,
+						height: 250,
+						spacingTop: 5,
+						spacingRight: 0,
+						spacingBottom: 5,
+						spacingLeft: 0,            
+						type: 'line'
+					},
+					title: {
+						text: null 
+					},
+					xAxis: {
+						labels: { enabled: false},
+						categories:["2017.2Q","2017.3Q","2017.4Q","2018.1Q","2018.2Q","2018.3Q","2018.4Q","2019.1Q"]
+					},
+					legend: {
+						align: 'left',
+						verticalAlign: 'top',
+					},
+					yAxis: {
+						title: {
+							text: null 
+						}
+					},
+					plotOptions: {
+						line: {
+							dataLabels: {
+								enabled: true
+							},
+							enableMouseTracking: false
+						}
+					},
+					series: [{"name":"collection turnover",  lineWidth: 4,type: 'spline',"data":[64.0,64.0,67.0,80.0,72.0,70.0,65.0,69.0]},
+							 {"name":"inventory turnover", lineWidth: 4,type: 'spline', "data":[74.0,74.0,63.0,66.0,62.0,66.0,76.0,101.0]},
+							 {"name":"payables turnover", type: 'spline',  "data":[48.0,48.0,47.0,55.0,52.0,53.0,59.0,74.0]}]        });
+
+			});
+
+		</script>
+	</body>
+
+</html>

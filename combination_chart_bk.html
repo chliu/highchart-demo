@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>Highcharts Tutorial</title>
+        <script src ="https://code.highcharts.com/highcharts.js"></script> 
+        <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    </head>
+
+    <body>
+        <div id = "container" style = "  margin: 0 auto"></div>
+        <script language = "JavaScript">
+
+		document.addEventListener('DOMContentLoaded', function () {
+
+		   Highcharts.chart('container', {
+                    chart: {
+                        zoomType: 'xy'
+                    },
+		    title: {
+            		text: null
+        	    },
+                    xAxis: [{
+			 labels: {
+                         	enabled:false 
+			 },
+                        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug']
+                    }],
+                    yAxis: [{
+                        labels: {
+                            style: {
+                                color: Highcharts.getOptions().colors[1]
+                            }
+                        },
+                        title: {
+                            text: null,
+                            style: {
+                                color: Highcharts.getOptions().colors[1]
+                            }
+                        }
+                    }, { 
+                        title: {
+			    text: null,
+                            style: {
+                                color: Highcharts.getOptions().colors[0]
+                            }
+                        },
+                        labels: {
+                            style: {
+                                color: Highcharts.getOptions().colors[0]
+                            }
+                        },
+                        opposite: true
+                    }],
+                    tooltip: {
+                        shared: true
+                    },
+                    legend: {
+                        x: 0,
+                        y: 0,
+                    },
+                    series: [{
+                        name: '營收',
+                        type: 'column',
+                        yAxis: 1,
+                        data: [2979,2574,2869,3226,3061,3291,3945,3513]
+                    }, {
+                        name: '毛利率',
+                        type: 'spline',
+			dashStyle: 'shortdot',
+                        data: [19,15,19,23,24,23,22,25]
+                    }, {
+                        name: '淨利率',
+                        type: 'spline',
+                        data: [6,6,8,10,9,14,12,11]
+                    }
+		    ]
+                });
+	});
+        </script>
+    </body>
+</html>

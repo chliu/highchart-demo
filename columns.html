@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <title>Highcharts Tutorial</title>
+    <script src ="https://code.highcharts.com/highcharts.js"></script> 
+  </head>
+  <body>
+    <div id = "container" style = "margin: 0 auto"></div>
+    <script language = "JavaScript">
+
+      document.addEventListener('DOMContentLoaded', function () {
+
+        Highcharts.chart('container', {
+          chart: {
+            type: 'column',
+            zoomType : false,
+            animation: false,
+            width: 600,
+            height: 250,
+            spacingBottom: 15,
+            spacingTop: 10,
+            spacingLeft: 10,
+            spacingRight: 10,
+          },
+          yAxis: {
+            allowDecimals: false,
+            title: {
+              text: null
+            }
+          },
+          legend: {
+            align: 'left',
+            verticalAlign: 'top',
+          },
+          plotOptions: {
+            column: {
+              borderRadius: 3
+            },
+            series: {
+              enableMouseTracking: false
+            }
+          },
+          title: {
+            text: null
+          },
+          xAxis: {
+            labels: { enabled: false},
+            categories: ['1', '2', '3', '4', '5','6', '7', '8']
+          },
+          credits: {
+            enabled: false
+          },
+          series: [{
+            name: '營業利益',
+            data: [99,106,82,58,137,64,90,63]
+          }, {
+            name: '營運之現金流量',
+            data: [116,107,17,127,146,163,134,239],
+            color: 'red'
+          }
+          ]
+        });
+
+      });
+
+    </script>
+  </body>
+
+</html>

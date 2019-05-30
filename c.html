@@ -1,0 +1,63 @@
+
+
+<html>
+  <head>
+    <title>Highcharts Tutorial</title>
+    <script src ="https://code.highcharts.com/highcharts.js"></script>
+  </head>
+  <body>
+    <div id = "container" style = "margin: 0 auto"></div>
+    <script language = "JavaScript">
+
+      document.addEventListener('DOMContentLoaded', function () {
+
+        Highcharts.chart('container', {
+          chart: {
+            type: 'column',
+            zoomType : false,
+            animation: false,
+            width: 600,
+            height: 250,
+            spacingBottom: 15,
+            spacingTop: 10,
+            spacingLeft: 10,
+            spacingRight: 10,
+          },
+          yAxis: {
+            allowDecimals: false,
+            title: {
+              text: null
+            }
+          },
+          legend: {
+            align: 'left',
+            verticalAlign: 'top',
+          },
+          plotOptions: {
+            column: {
+              borderRadius: 3
+            },
+            columns: {
+              enableMouseTracking: false
+            }
+          },
+          title: {
+            text: null
+          },
+          xAxis: {
+            labels: { enabled: false},
+            categories: ["2017.1Q","2017.2Q","2017.3Q","2017.4Q","2018.1Q","2018.2Q","2018.3Q","2018.4Q"]
+          },
+          credits: {
+            enabled: false
+          },
+          columns: [{"name":"OperatingIncome","data":[95352.0,83255.0,98056.0,108895.0,96827.0,84428.0,95245.0,107123.0]},
+            {"name":"CashFlowOperating","data":[161008.0,103400.0,116783.0,204126.0,160726.0,129773.0,94082.0,189373.0]}]       
+        });
+
+      });
+
+    </script>
+  </body>
+</html>
+
